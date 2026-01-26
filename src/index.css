@@ -1,0 +1,265 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+@theme {
+  /* 🎨 DUAL THEME COLOR SYSTEM - Tailwind Native Dark Mode */
+
+  /* � DARK MODE (default with .dark class) - Midnight System */
+  /* Deep navy blues with bright cyan monitor glow */
+  --color-primary: #38BDF8;
+  /* Monitor Glow - Bright cyan energy */
+  --color-background-dark: #080710;
+  /* Abyssal Blue - Deep violet undertone */
+  --color-surface-dark: #120E22;
+  /* Void Indigo - Shadowed corners */
+  --color-card-dark: #120E22;
+  --color-border-dark: #1E293B;
+  /* Steel Frame - Muted blue-gray HUD */
+  --color-text-primary: #F8FAFC;
+  /* Pure Moonlight - High contrast */
+  --color-text-muted: #64748B;
+  /* City Haze - Secondary info */
+  --color-text-dim: #64748B;
+  --color-hud-accent: #38BDF8;
+  /* Cyan Monitor Glow */
+  --color-hud-success: #2DD4BF;
+  /* System Verified - Teal green */
+  --color-hud-warning: #F59E0B;
+  /* Alert Status - Warm amber */
+
+  /* Typography */
+  --font-display: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+/* 🌅 LIGHT MODE - Sepia System (when .dark class is NOT present) */
+/* Warm brown/orange palette for "Solo Leveling" RPG aesthetic in daylight */
+:root:not(.dark) {
+  --color-primary: #E27D60;
+  /* Terracotta Orange - Main action color */
+  --color-hud-accent: #E8A87C;
+  /* Golden Amber - HUD highlights */
+  --color-hud-success: #859669;
+  /* Olive Green - Warm earthy success */
+  --color-hud-warning: #C38D9E;
+  /* Twilight Rose - Secondary accent */
+
+  --color-background-dark: #FFF9F0;
+  /* Warm Parchment - Sunlight on wall */
+  --color-surface-dark: #FDF0E0;
+  /* Sunset Glow - Quest windows */
+  --color-card-dark: #FDF0E0;
+  --color-border-dark: #E8A87C;
+  /* Golden Amber - Copper borders */
+
+  --color-text-primary: #403020;
+  /* Deep Espresso - High contrast brown */
+  --color-text-muted: #8B735B;
+  /* Soft Cedar - Descriptions */
+  --color-text-dim: #8B735B;
+}
+
+/* Custom scrollbar - Auto-adapts */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-background-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border-dark);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
+}
+
+/* Base styles */
+html {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+body {
+  font-family: var(--font-display);
+  background-color: var(--color-background-dark);
+  color: var(--color-text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Glass-morphism for Light Mode - Warm Sepia */
+:root:not(.dark) .glass-card {
+  background: rgba(253, 240, 224, 0.6);
+  /* Sunset Glow with transparency */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Warm Sunset Shadows for Light Mode */
+:root:not(.dark) .glow-shadow {
+  box-shadow: 0 10px 30px rgba(226, 125, 96, 0.15);
+  /* Terracotta warm shadow */
+}
+
+:root:not(.dark) .glow-shadow-orange {
+  box-shadow: 0 10px 30px rgba(227, 168, 124, 0.2);
+  /* Golden Amber glow */
+}
+
+/* 🌅 LIGHT MODE TEXT COLOR OVERRIDES (Tailwind Native) */
+/* Override hardcoded text colors for light mode readability */
+
+:root:not(.dark) .text-white {
+  color: var(--color-text-primary) !important;
+}
+
+:root:not(.dark) .text-slate-300,
+:root:not(.dark) .text-slate-400 {
+  color: var(--color-text-muted) !important;
+}
+
+:root:not(.dark) .text-slate-500,
+:root:not(.dark) .text-slate-600 {
+  color: #64748B !important;
+}
+
+/* Keep primary colors consistent */
+:root:not(.dark) .text-primary {
+  color: var(--color-primary) !important;
+}
+
+:root:not(.dark) .text-hud-success,
+:root:not(.dark) .accent-success {
+  color: var(--color-hud-success) !important;
+}
+
+:root:not(.dark) .text-hud-warning,
+:root:not(.dark) .accent-warning {
+  color: var(--color-hud-warning) !important;
+}
+
+/* Keep specific hover states working */
+:root:not(.dark) .hover\:text-white:hover {
+  color: var(--color-text-primary) !important;
+}
+
+:root:not(.dark) .hover\:text-primary:hover {
+  color: var(--color-primary) !important;
+}
+
+:root:not(.dark) .group:hover .group-hover\:text-primary {
+  color: var(--color-primary) !important;
+}
+
+/* HUD component styles - Auto-theme aware */
+.hud-border {
+  border: 1px solid var(--color-border-dark);
+}
+
+.hud-card {
+  background-color: var(--color-surface-dark);
+  border-radius: 4px;
+}
+
+/* Cards: Auto-adapt to theme */
+.card-flat {
+  border-radius: 4px;
+  background-color: var(--color-card-dark);
+  border: 1px solid var(--color-border-dark);
+}
+
+/* 🌌 SHADOW SOVEREIGN DARK MODE EFFECTS */
+/* System Window Effect - Violet-Tinted Glass with gradient */
+.dark .system-window,
+.dark .card-flat {
+  background: linear-gradient(180deg, rgba(18, 14, 34, 0.8) 0%, rgba(8, 7, 16, 0.9) 100%);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(168, 85, 247, 0.2);
+  /* System Violet at low opacity */
+}
+
+/* Cyber-Glow Borders & Highlights */
+.dark .cyber-border {
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  box-shadow: 0 0 10px rgba(224, 38, 255, 0.15);
+  /* Subtle Magenta Glow */
+}
+
+/* The "Magenta Gem" Glow - High impact active elements */
+.dark .glow-shadow {
+  box-shadow: 0 0 10px rgba(224, 38, 255, 0.6);
+}
+
+/* HUD Lines/Dividers */
+.dark .hud-divider {
+  border-color: rgba(168, 85, 247, 0.3);
+}
+
+/* Status Gradient - Deep violet fade */
+.dark .status-gradient {
+  background: linear-gradient(to bottom, #1E1B4B, #080710);
+}
+
+/* Accents - Auto-adapt */
+.accent-text {
+  color: var(--color-primary);
+}
+
+.accent-success {
+  color: var(--color-hud-success);
+}
+
+.accent-warning {
+  color: var(--color-hud-warning);
+}
+
+/* Blinking cursor */
+.blinking-cursor::after {
+  content: '_';
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Spin slow animation */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 10s linear infinite;
+}
+
+/* Explicit Profile Background Logic to bypass Tailwind specificity issues */
+.dark #profile-bg-light, .dark #avatar-img-light {
+  opacity: 0 !important;
+}
+
+.dark #profile-bg-dark, .dark #avatar-img-dark {
+  opacity: 1 !important;
+}

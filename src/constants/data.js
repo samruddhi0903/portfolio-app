@@ -123,6 +123,13 @@ export const QUEST_DATA = {
             description: '2048 sliding-tile puzzle implemented with JavaScript and CSS — grid movement, merging tiles and score tracking.',
             status: 'Demo',
             type: 'SIDE'
+        },
+        {
+            role: "Personal PortFolio",
+            company: 'Personal',
+            description: 'TypeScript-first, React Personal Portfoilo',
+            status: 'DEPLOYED',
+            type: 'SIDE'
         }
     ]
 };
@@ -384,6 +391,15 @@ export const PROJECTS_DATA = {
             xp: 180,
             xpCategory: 'Game',
             githubLink: 'https://github.com/samruddhi0903/2048-game'
+        },
+        {
+            title: 'Portfolio app',
+            description: 'TypeScript-first, React Personal Portfoilo',
+            status: 'production',
+            tags: ['TypeScript', 'CSS', 'React', 'Responsive', 'Web App'],
+            xp: 520,
+            xpCategory: 'portfoilo',
+            githubLink: 'https://github.com/samruddhi0903/portfolio-app'
         }
     ],
     xpSummary: [

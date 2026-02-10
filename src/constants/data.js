@@ -97,6 +97,13 @@ export const QUEST_DATA = {
             type: 'SIDE'
         },
         {
+            role: 'Memory Game',
+            company: 'Personal',
+            description:'A fun and interactive memory matching game built with React. The goal is to find all matching pairs of monsters by flipping cards.',
+            status: 'Completed',
+            type: 'SIDE'
+        },
+        {
             role: 'saas-dynamic-pricing',
             company: 'Personal',
             description: 'TypeScript-first SaaS dynamic pricing project — pricing rules engine and UI for subscription/tiered plans.',
@@ -357,6 +364,15 @@ export const PROJECTS_DATA = {
             githubLink:'https://github.com/samruddhi0903/Hiring-nurse-platform'
         },
         {
+            title: 'Memory Game',
+            description: 'A fun and interactive memory matching game built with React. The goal is to find all matching pairs of monsters by flipping cards.',
+            status: 'production',
+            tags: ['TypeScript', 'CSS', 'React', 'Responsive', 'Web App'],
+            xp: 200,
+            xpCategory: 'Game',
+            githubLink: 'https://github.com/samruddhi0903/memory-game'
+        },
+        {
             title: 'Snake Game',
             description: 'Classic Snake game implemented for the browser using JavaScript, HTML and CSS (player controls, scoring and responsive canvas/grid inferred).',
             status: 'demo',
@@ -375,15 +391,6 @@ export const PROJECTS_DATA = {
             githubLink: 'https://github.com/samruddhi0903/Dot-and-Box-Game'
         },
         {
-            title: 'saas-dynamic-pricing',
-            description: 'TypeScript-first SaaS dynamic pricing project — likely a pricing rules engine / pricing UI for subscriptions or tiered plans (inferred).',
-            status: 'production',
-            tags: ['TypeScript', 'CSS', 'SaaS', 'Pricing', 'Web App'],
-            xp: 520,
-            xpCategory: 'SaaS_Tool',
-            githubLink: 'https://github.com/samruddhi0903/saas-dynamic-pricing'
-        },
-        {
             title: '2048 Game',
             description: 'Browser implementation of the 2048 puzzle game using JavaScript, HTML and CSS (grid sliding, merging tiles, score tracking inferred).',
             status: 'demo',
@@ -400,7 +407,16 @@ export const PROJECTS_DATA = {
             xp: 520,
             xpCategory: 'portfoilo',
             githubLink: 'https://github.com/samruddhi0903/portfolio-app'
-        }
+        },
+        {
+            title: 'saas-dynamic-pricing',
+            description: 'TypeScript-first SaaS dynamic pricing project — likely a pricing rules engine / pricing UI for subscriptions or tiered plans (inferred).',
+            status: 'production',
+            tags: ['TypeScript', 'CSS', 'SaaS', 'Pricing', 'Web App'],
+            xp: 520,
+            xpCategory: 'SaaS_Tool',
+            githubLink: 'https://github.com/samruddhi0903/saas-dynamic-pricing'
+        },
     ],
     xpSummary: [
         { skill: 'Enterprise Systems', level: 'High' },
